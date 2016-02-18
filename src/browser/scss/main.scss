@@ -1,0 +1,27 @@
+body {
+  background: black;
+  color: white;
+  padding: 0;
+  margin: 15px 25px;
+}
+
+header {
+  h1, h4 {
+    display: inline-block;
+  }
+  h4 {
+    text-align: right;
+    padding-left: 15px;
+  }
+  border-bottom: 1px solid white;
+}
+
+.toolbar {
+  margin: 15px 10px;
+  display: flex;
+  justify-content: space-around;
+  button {
+    flex: 1;
+    max-width: 80px;
+  }
+}
