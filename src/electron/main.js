@@ -55,8 +55,21 @@ app.on('activate', function () {
 const rpc = require('./rpc');
 const shell = require('shelljs');
 
-rpc('whoami', function(cb, arg) {
-  shell.exec('whoami', (code, stdout, stderr) => {
+const withDevtoolrc = (cmd) => "source " + __dirname + "/../../devtoolrc.sh; " + cmd
+const inNewTab = (cmd) => withDevtoolrc(' tab "' + cmd + '"')
+
+// run command in a new tab
+rpc('run', function(cb, cmd) {
+  shell.exec(inNewTab(cmd), (code, stdout, stderr) => {
      cb(stdout.trim())
   })
 })
+
+// simply execute a command
+rpc('exec', function(cb, cmd) {
+  shell.exec(withDevtoolrc(cmd), (code, stdout, stderr) => {
+     cb(stdout.trim())
+  })
+})
+
+

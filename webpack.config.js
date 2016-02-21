@@ -23,7 +23,8 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.ExternalsPlugin('commonjs', ['electron'])
   ],
   resolve: {
     root: [
@@ -33,5 +34,8 @@ module.exports = {
       'node_modules'
     ]
   },
-  target: "electron"
+  // externals: {
+  //   electron: "electron"
+  // }
+  // target: "electron"
 }
