@@ -1,27 +1,38 @@
+$bg-color: black;
+$h1-color: white;
+$h2-color: white;
+$h3-color: white;
+$h4-color: white;
+$text-color: green;
+$input-color: green;
+$divider-color: blue;
+
 body {
-  background: black;
-  color: white;
+  background: $bg-color;
+  color: $text-color;
+  h1 { color: $h1-color; }
+  h2 { color: $h2-color; }
+  h3 { color: $h3-color; }
+  h4 { color: $h4-color; }
+  h1, h2, h3, h4 {
+    display: inline-block;
+  }
   padding: 0;
   margin: 15px 25px;
 }
 
 header {
-  h1, h4 {
-    display: inline-block;
-  }
-  h4 {
-    text-align: right;
-    padding-left: 15px;
-  }
-  border-bottom: 1px solid white;
+  h4 { padding-left: 15px; }
+  border-bottom: 1px solid $divider-color;
 }
 
-.toolbar {
-  margin: 15px 10px;
-  display: flex;
-  justify-content: space-around;
-  button {
-    flex: 1;
-    max-width: 80px;
-  }
+input, button {
+  background: transparent;
+  color: $input-color;
+  border: 1px solid $input-color;
+  border-radius: 5px;
+  padding: .4em .8em;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  outline: 0;
 }

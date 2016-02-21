@@ -20,6 +20,7 @@ node debug localhost:5858
 
 # ToDo
 
+- create a ~/.devtool.json file for configuration and defaults
 - better sass organization and theming
 - path autocomplete
 - input selections
