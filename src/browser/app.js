@@ -6,15 +6,13 @@ import h from "react-hyperscript"
 import R from "ramda"
 import electron from "electron"
 import rpc from './rpc'
-import Exec from './exec'
-import Run from './run'
+import {RunBtn, ExecBtn, Exec} from './cmd'
 import {Text, Path, Select} from './inputs'
 
 window.h = h
 window.R = R
 window.rpc = rpc
 window.Exec = Exec
-window.Run = Run
 window.React = React
 window.electron = electron
 
@@ -39,14 +37,14 @@ const App = React.createClass({
       Section('Getting Started', [
         Path({initial:"", placeholder:"~/path/to/project"}, (path) => {
           return h('span', [
-            Run('install', `
+            RunBtn('install', `
               mkdir -p ${path};
               cd ${path};
               git clone git@github.com:ccorcos/dev-tool.git;
               cd dev-tool;
               npm install;
             `),
-            Run('start', `
+            RunBtn('start', `
               cd ${path}/dev-tool
               ./start.sh
             `),
@@ -61,7 +59,7 @@ const App = React.createClass({
             R.map(R.trim)
           )(result)
           return Select(files, (selected) => {
-            return Run("open sesame", `open ~/Documents/${selected}`)
+            return ExecBtn("open sesame", `open ~/Documents/${selected}`)
           })
         })
       ])
