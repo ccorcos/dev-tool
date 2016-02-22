@@ -9,18 +9,4 @@ git clone https://github.com/ccorcos/dev-tool
 cd dev-tool
 npm install
 ./start.sh
-# OR manually:
-# tab 1: start-server
-node server.js
-# tab 2: start-electron
-node_modules/.bin/electron src/electron/main.js --debug
-# tab 3: main process debug console
-node debug localhost:5858
 ```
-
-# ToDo
-
-- create a ~/.devtool.json file for configuration and defaults
-- better sass organization and theming
-- path autocomplete
-- input selections

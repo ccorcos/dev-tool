@@ -3,13 +3,15 @@ require('scss/main.scss')
 import React from "react"
 import ReactDOM from "react-dom"
 import h from "react-hyperscript"
+import R from "ramda"
 import electron from "electron"
 import rpc from './rpc'
 import Exec from './exec'
 import Run from './run'
-import {Text} from './inputs'
+import {Text, Path, Select} from './inputs'
 
 window.h = h
+window.R = R
 window.rpc = rpc
 window.Exec = Exec
 window.Run = Run
@@ -35,8 +37,7 @@ const App = React.createClass({
     return h('div.app', [
       Header,
       Section('Getting Started', [
-        Text({initial:"", placeholder:"installation path"}, (path) => {
-          path = path || "~/Desktop";
+        Path({initial:"", placeholder:"~/path/to/project"}, (path) => {
           return h('span', [
             Run('install', `
               mkdir -p ${path};
@@ -50,6 +51,18 @@ const App = React.createClass({
               ./start.sh
             `),
           ])
+        })
+      ]),
+      Section('More Fun', [
+        Exec('ls ~/Documents/', (result) => {
+          const files = R.pipe(
+            R.trim,
+            R.split('\n'),
+            R.map(R.trim)
+          )(result)
+          return Select(files, (selected) => {
+            return Run("open sesame", `open ~/Documents/${selected}`)
+          })
         })
       ])
     ])

@@ -33,9 +33,5 @@ module.exports = {
     modulesDirectories: [
       'node_modules'
     ]
-  },
-  // externals: {
-  //   electron: "electron"
-  // }
-  // target: "electron"
+  }
 }
