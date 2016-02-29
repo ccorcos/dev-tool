@@ -10,3 +10,7 @@ cd dev-tool
 npm install
 ./start.sh
 ```
+
+
+use iTerm
+brew install trash

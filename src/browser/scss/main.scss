@@ -1,58 +1,235 @@
-$bg-color: black;
-$h1-color: white;
-$h2-color: white;
-$h3-color: white;
-$h4-color: white;
-$text-color: green;
-$input-color: green;
-$divider-color: red;
-$active-color: white;
-$invalid-color: red;
+// Variables
+
+$black: #23292F;
+$white: #fff;
+
+$blue: #00C8E5;
+
+$time: 0.2s;
+$curve: ease-in-out;
+
+
+// Fonts
+
+@font-face {
+  font-family: 'Hack';
+  src: url('../../assets/fonts/woff/latin/hack-regular-latin-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hack';
+  src: url('../../assets/fonts/woff/latin/hack-bold-latin-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+// Reset
 
 body {
-  background: $bg-color;
-  color: $text-color;
-  h1 { color: $h1-color; }
-  h2 { color: $h2-color; }
-  h3 { color: $h3-color; }
-  h4 { color: $h4-color; }
-  h1, h2, h3, h4 {
-    display: inline-block;
-  }
+  margin: 0;
   padding: 0;
-  margin: 15px 25px;
 }
 
-header {
-  h4 { padding-left: 15px; }
-  border-bottom: 1px solid $divider-color;
+
+// Base styles
+
+html,
+body {
+  min-height: 100%;
 }
 
-input, button, select {
-  background: transparent;
-  color: $input-color;
-  border: 1px solid $input-color;
-  border-radius: 5px;
-  padding: .4em .8em;
-  margin-bottom: 5px;
-  margin-right: 5px;
+html {
+  font-size: 14px;
+}
+
+body {
+  font-family: "Hack";
+  color: $white;
+  background-color: $black;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+}
+
+
+// Typography
+
+h1, h2, h3, h4 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+p {
+  margin: 1rem 0;
+
+  a {
+    border-bottom: 2px solid rgba($white, 0.2);
+    padding-bottom: 2px;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+h4 {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+
+// Header
+
+.header {
+  border-bottom: 1px solid rgba($white, 0.1);
+  height: 80px;
+  padding: 0 2.5rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.header__logo,
+.header__title,
+.header__user {
+  margin: 0;
+}
+
+.header__logo {
+  width: 30px;
+  height: 30px;
+  margin-right: 1.5rem;
+  background-image: url('../../assets/logo.svg');
+  background-position: center center;
+  background-size: 30px;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+.header__user {
+  color: rgba($white, 0.5);
+  margin-left: auto;
+}
+
+
+// Section
+
+.section {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.section__title {
+  font-size: 22px;
+  margin-bottom: 1rem;
+}
+
+.section__row {
+  margin-bottom: 0.5rem;
+  * {
+    display: inline !important;
+  }
+}
+
+
+// Buttons
+
+.btn {
+  font-family: inherit;
+  font-size: inherit;
+  display: inline-block;
+  border: 0;
   outline: 0;
-  &:active, .active, &:hover {
-    background: rgba($active-color, 0.25);
-  }
-  &:focus {
-    background: rgba($active-color, 0.1);
+  color: inherit;
+  cursor: pointer;
+  background: rgba($white, 0.1);
+  box-shadow: 0px 1px 2px 0px rgba(#000, 0.1);
+  border-radius: 4px;
+  padding: 0.85rem 1rem;
+  transition: background $time $curve;
+
+  &:hover {
+    background: rgba($white, 0.15);
   }
 }
 
-select {
-  height: 2.2em;
+button, input, select {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
 }
+
+.btn--primary {
+  background-color: $blue;
+
+  &:hover {
+    background: mix($blue, $white, 90%);
+  }
+}
+
+
+// Input
 
 input {
-  width: 20em;
+  font-family: inherit;
+  font-size: inherit;
+  display: inline-block;
+  border: 0;
+  outline: 0;
+  color: $black;
+  background: $white;
+  border-radius: 4px;
+  padding: 0.85rem 1rem;
+  transition: background $time $curve;
 }
 
-input.invalid {
-  border-color: $invalid-color;
+
+// Select
+
+select {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.85rem 1rem;
+  padding-right: 2.5rem;
+  border-radius: 4px;
+  background-color: $white;
+  color: $black;
+  -webkit-appearance: none;
+  border: 0;
+  outline: 0;
+  background-image: url('../../assets/dropdown.svg');
+  background-position: right 1rem center;
+  background-size: 10px;
+  background-repeat: no-repeat;
+}
+
+.select-wrapper {
+  display: block;
+
+  // select {
+  //   margin-right: 0.5rem;
+  // }
+
+  .btn {
+    @extend .btn--primary;
+  }
 }

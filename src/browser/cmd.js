@@ -13,7 +13,7 @@ const RunButton = React.createClass({
     })
   },
   render() {
-    return h('button' + (this.state.running ? ".running" : ""), {onClick: this.run}, this.props.name)
+    return h('button.btn' + (this.state.running ? ".running" : ""), {onClick: this.run}, this.props.name)
   }
 })
 
@@ -33,7 +33,7 @@ const ExecButton = React.createClass({
     })
   },
   render() {
-    return h('button' + (this.state.running ? ".running" : ""), {onClick: this.exec}, this.props.name)
+    return h('button.btn' + (this.state.running ? ".running" : ""), {onClick: this.exec}, this.props.name)
   }
 })
 

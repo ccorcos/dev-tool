@@ -7,6 +7,21 @@ const electron = require('electron');
 const app = electron.app;
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow;
+// Debug console and utils
+const Debug = require('electron-debug')
+// Send crash reports to a remote server
+const crashReporter = electron.crashReporter;
+
+// crashReporter.start({
+//   productName: 'DevTool',
+//   companyName: 'YourCompany',
+//   submitURL: 'https://your-domain.com/url-to-submit',
+//   autoSubmit: true
+// });
+
+Debug({
+  showDevTools: (process.env.NODE_ENV === "development")
+});
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -17,10 +32,11 @@ function createWindow () {
   mainWindow = new BrowserWindow({width: 800, height: 600});
 
   // and load the index.html of the app.
-  mainWindow.loadURL('file://' + __dirname + '/../browser/index.html');
-
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  if (process.env.HOT) {
+    mainWindow.loadURL('file://' + __dirname + '/../browser/dev_index.html');
+  } else {
+    mainWindow.loadURL('file://' + __dirname + '/../browser/prod_index.html');
+  }
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function() {

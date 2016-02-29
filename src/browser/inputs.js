@@ -124,7 +124,7 @@ const SelectInput = React.createClass({
     this.setState({selected: e.target.value})
   },
   render() {
-    return h('span', [
+    return h('span.select-wrapper', [
       h('select', {value: this.state.selected, onChange: this.onChange},
         this.props.options.map(option => {
           return h('option', {value: option}, option)

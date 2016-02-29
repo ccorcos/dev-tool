@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
-    entry: {
+  entry: {
     app: [
       'webpack-hot-middleware/client?path=http://localhost:8080/__webpack_hmr',
       './src/browser/app.js'
@@ -29,6 +29,7 @@ module.exports = {
   resolve: {
     root: [
       path.resolve('src/browser'),
+      path.resolve('src/assets'),
     ],
     modulesDirectories: [
       'node_modules'
