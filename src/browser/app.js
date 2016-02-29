@@ -26,7 +26,7 @@ const Section = (name, children) => {
 const Header = Exec("whoami", (hostname) => {
   return h('header.header', [
     h("div.header__logo"),
-    h("h4.header__title", "Affirm Dev Tool"),
+    h("h4.header__title", "Dev Tool"),
     h("h4.header__user", hostname)
   ])
 })

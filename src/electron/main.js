@@ -71,20 +71,20 @@ app.on('activate', function () {
 const rpc = require('./rpc');
 const shell = require('shelljs');
 
-const withDevtoolrc = (cmd) => "source " + __dirname + "/../../devtoolrc.sh; " + cmd
-const inNewTab = (cmd) => withDevtoolrc(' tab "' + cmd + '"')
+const withRc = (cmd) => "DIR=\"" + __dirname  + "\"; source \"$DIR\"/../../devtoolrc.sh; " + cmd
+const inNewTab = (cmd) => withRc('tab "' + cmd + '"')
 
 // run command in a new tab
 rpc('run', function(cb, cmd) {
   shell.exec(inNewTab(cmd), (code, stdout, stderr) => {
-     cb(stdout.trim())
+    cb(stdout.trim() || stderr)
   })
 })
 
 // simply execute a command
 rpc('exec', function(cb, cmd) {
-  shell.exec(withDevtoolrc(cmd), (code, stdout, stderr) => {
-     cb(stdout.trim())
+  shell.exec(withRc(cmd), (code, stdout, stderr) => {
+    cb(stdout.trim() || stderr)
   })
 })
 
