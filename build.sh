@@ -8,10 +8,10 @@ NODE_ENV=production ./node_modules/.bin/webpack -p --config webpack.config.prod.
 trash built
 ./node_modules/.bin/electron-packager . "Dev Tool" \
   --platform=darwin --arch=x64 --version=0.35.6 \
-  --ignore="node_modules/(electron-prebuilt|electron-packager|.*webpack.*|.*loader.*|postcss.*|babel.*)" \
+  --prune \
   --app-bundle-id "com.dev-tool.app" --app-version 0.1.0 \
+  --icon ./src/assets/icon.icns \
   --out ./built
-  # --icon ./src/assets/icon.icns 
 
 # compress it
 cd built

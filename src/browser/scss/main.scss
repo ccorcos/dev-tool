@@ -146,7 +146,7 @@ h4 {
 
 .section__row {
   margin-bottom: 0.5rem;
-  * {
+  *:not(ul,li) {
     display: inline !important;
   }
 }
