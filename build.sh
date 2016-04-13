@@ -10,8 +10,8 @@ trash built
   --platform=darwin --arch=x64 --version=0.35.6 \
   --prune \
   --app-bundle-id "com.dev-tool.app" --app-version 0.1.0 \
-  --icon ./src/assets/icon.icns \
   --out ./built
+  # --icon ./src/assets/icon.icns \
 
 # compress it
 cd built
