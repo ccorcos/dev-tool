@@ -2,14 +2,11 @@
 
 This is a basic boilerplate for building an Electron app with React, HMR, SCSS, and basic commandline rpc features. My intentions with this project is to build simple GUI's for different projects of mine.
 
-![](https://s3.amazonaws.com/uploads.hipchat.com/51605/2692734/b2xk1miLJyTF7Fq/upload.png)
+![](https://s3.amazonaws.com/uploads.hipchat.com/51605/2692734/s0VEcRKdcDdzkc0/upload.png)
 
 # To Do
 
 - icon.icns for distributable app
-- readme to explain the tools for building the UI
-- a better demo app
-
 
 # Getting Started
 
