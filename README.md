@@ -4,6 +4,10 @@ This is a basic boilerplate for building an Electron app with React, HMR, SCSS, 
 
 ![](https://s3.amazonaws.com/uploads.hipchat.com/51605/2692734/wdglOJdrtZYyIBz/upload.png)
 
+Here's an example Dev Tool I built for [Shindig](https://medium.com/@chetcorcos/shindig-an-event-discovery-app-built-with-meteor-js-react-js-and-neo4j-602afb483ae6#.aoy41qgml).
+
+![](https://s3.amazonaws.com/uploads.hipchat.com/51605/2692734/vCp2jqdoR1f14e9/upload.png)
+
 # To Do
 
 - icon.icns for distributable app
