@@ -2,15 +2,9 @@
 
 This is a basic boilerplate for building an Electron app with React, HMR, SCSS, and basic commandline rpc features. My intentions with this project is to build simple GUI's for different projects of mine.
 
-![](https://s3.amazonaws.com/uploads.hipchat.com/51605/2692734/wdglOJdrtZYyIBz/upload.png)
-
 Here's an example Dev Tool I built for [Shindig](https://medium.com/@chetcorcos/shindig-an-event-discovery-app-built-with-meteor-js-react-js-and-neo4j-602afb483ae6#.aoy41qgml).
 
 ![](https://s3.amazonaws.com/uploads.hipchat.com/51605/2692734/vCp2jqdoR1f14e9/upload.png)
-
-# To Do
-
-- icon.icns for distributable app
 
 # Getting Started
 
@@ -46,7 +40,9 @@ Some references you might want to checkout that are used in this project:
 
 This project comes with a set of UI components that make it easy to build your own functionality in `src/browser/app.js`. This project uses React and Webpack with hot-module-replacement so your code will update almost instantly with no refresh!
 
-There are 6 main UI elements for building the UI:
+There are 6 main UI elements for building the UI. All of them are demonstrated in this repo, and an image is provided below:
+
+![](https://s3.amazonaws.com/uploads.hipchat.com/51605/2692734/wdglOJdrtZYyIBz/upload.png)
 
 ### CLI Components
 
@@ -136,3 +132,7 @@ Exec('ls -1 ~/Desktop/', (result) => {
   })
 })
 ```
+
+# To Do
+
+- icon.icns for distributable app
