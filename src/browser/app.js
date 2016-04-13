@@ -34,6 +34,7 @@ const Header = Exec("whoami", (hostname) => {
 
 const Row = (children) => h('div.section__row', children)
 
+// {React, h, R}, {Header, Section, Row}, {Exec, RunBtn, ExecBtn}, {Text, Path, Select}
 const App = React.createClass({
   render() {
     return h('div.app', [
